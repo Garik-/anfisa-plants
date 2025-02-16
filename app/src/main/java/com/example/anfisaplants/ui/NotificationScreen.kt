@@ -100,8 +100,8 @@ fun NotificationList(
     }
 }
 
-val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
 fun formatDate(timestamp: Long): String {
+    val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
     return sdf.format(Date(timestamp))
 }
 
