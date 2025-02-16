@@ -2,6 +2,7 @@
     <string name="app_name">AnfisaPlants</string>
     <string name="delete_button">Удалить</string>
     <string name="cold_button">Холодно</string>
-    <string name="notifications_button">Уведомления</string>
+    <string name="notifications_title">Уведомления</string>
     <string name="add_button">Добавить</string>
+    <string name="back_button">Назад</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.example.anfisaplants
 
 
-import android.util.Log
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -15,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.anfisaplants.ui.NotificationAppBar
 import com.example.anfisaplants.ui.NotificationScreen
 import com.example.anfisaplants.ui.StartScreen
 import com.example.anfisaplants.ui.StartScreenBottomBar
@@ -40,20 +40,33 @@ fun PlantsApp(
 
     val bottomBar: (@Composable () -> Unit)? = when (currentScreen) {
         PlantsScreen.Start -> {
-            { StartScreenBottomBar(
-                onNotificationsClick = {
-                    navController.navigate(PlantsScreen.Notifications.name)
-                }
-            ) }
+            {
+                StartScreenBottomBar(
+                    onNotificationsClick = {
+                        navController.navigate(PlantsScreen.Notifications.name)
+                    }
+                )
+            }
         }
 
         else -> null
     }
 
-    Log.d("PlantsApp", "currentScreen=${currentScreen.name} bottomBar={$bottomBar}")
+    val topBar: (@Composable () -> Unit)? = when (currentScreen) {
+        PlantsScreen.Notifications -> {
+            {
+                NotificationAppBar(
+                    canNavigateBack = navController.previousBackStackEntry != null,
+                    navigateUp = { navController.navigateUp() }
+                )
+            }
+        }
 
+        else -> null
+    }
 
     Scaffold(
+        topBar = { topBar?.invoke() },
         bottomBar = { bottomBar?.invoke() },
     ) { innerPadding ->
         NavHost(

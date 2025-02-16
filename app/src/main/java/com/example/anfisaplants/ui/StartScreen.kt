@@ -99,7 +99,7 @@ fun StartScreenBottomBar(
             IconButton(onClick = onNotificationsClick) {
                 Icon(
                     imageVector = Icons.Outlined.Notifications,
-                    contentDescription = stringResource(R.string.notifications_button)
+                    contentDescription = stringResource(R.string.notifications_title)
                 )
             }
         },
