@@ -11,9 +11,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 
 enum class Lighting {
-    С1, C2, C3
+    C1, C2, C3
 }
-
 
 
 data class PlantItem(
@@ -23,7 +22,7 @@ data class PlantItem(
     val image: ImageVector? = null,
     val plantAt: Long = System.currentTimeMillis(),
     val potVolume: Float = 0.0f,
-    val lighting: Lighting = Lighting.С1,
+    val lighting: Lighting = Lighting.C1,
     val note: String? = null,
 
     val createdAt: Long = System.currentTimeMillis(),

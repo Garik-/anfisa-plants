@@ -42,9 +42,6 @@ fun TestCom () {
  * @param tabs List of tab titles.
  * @param contentScreens List of Composable functions representing content screens for each tab.
  * @param modifier Modifier for the parent layout.
- * @param containerColor Background color for the tab row container.
- * @param contentColor Color for the text content of the tabs.
- * @param indicatorColor Color for the indicator line.
  */
 @Composable
 fun TabRowComponent(
