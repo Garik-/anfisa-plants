@@ -9,9 +9,25 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 
+
+enum class Lighting {
+    С1, C2, C3
+}
+
+
+
 data class PlantItem(
-    val icon: ImageVector, // Иконка
-    val label: String // Подпись
+    val icon: ImageVector,
+    val label: String,
+
+    val image: ImageVector? = null,
+    val plantAt: Long = System.currentTimeMillis(),
+    val potVolume: Float = 0.0f,
+    val lighting: Lighting = Lighting.С1,
+    val note: String? = null,
+
+    val createdAt: Long = System.currentTimeMillis(),
+    val updatedAt: Long = System.currentTimeMillis(),
 )
 
 data class NotificationMessage(
@@ -32,7 +48,7 @@ object DataSource {
     )
 
     var notificationMessages = listOf(
-        NotificationMessage(System.currentTimeMillis(), "test") ,
+        NotificationMessage(System.currentTimeMillis(), "test"),
         NotificationMessage(System.currentTimeMillis(), "test2")
     )
 }
